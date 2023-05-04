@@ -2,7 +2,7 @@ use clap::{arg, Command};
 use anyhow::Result;
 
 fn cli() -> Command {
-    Command::new("pg")
+    Command::new("pog")
         .about("Calculate percentage of growth")
         .subcommand_required(false)
         .arg(arg!(<INITIAL_VALUE> "The initial value").required(true))
@@ -12,10 +12,10 @@ fn cli() -> Command {
 fn main() -> Result<()>{
     let command = cli().get_matches();
 
-    let initial_value = pg::parse_with_commas(command.get_one("INITIAL_VALUE").unwrap())?;
-    let final_value = pg::parse_with_commas(command.get_one("FINAL_VALUE").unwrap())?;
+    let initial_value = pog::parse_with_commas(command.get_one("INITIAL_VALUE").unwrap())?;
+    let final_value = pog::parse_with_commas(command.get_one("FINAL_VALUE").unwrap())?;
 
-    let result = pg::percentage_of_growth(initial_value, final_value)?;
+    let result = pog::percentage_of_growth(initial_value, final_value)?;
 
     println!("{:.2}%", result);
 

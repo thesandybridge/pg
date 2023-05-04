@@ -20,14 +20,14 @@ jobs:
           override: true
 
       - name: Build
-        run: cargo build --all --release && strip target/release/pg && mv target/release/pg target/release/pg_amd64
+        run: cargo build --all --release && strip target/release/pog && mv target/release/pog target/release/pog_amd64
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/pg_amd64
+            target/release/pog_amd64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -52,7 +52,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: target/release/pg.exe
+          files: target/release/pog.exe
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -72,13 +72,13 @@ jobs:
           override: true
 
       - name: Build for mac
-        run: cargo build --all --release && strip target/release/pg && mv target/release/pg target/release/pg_darwin
+        run: cargo build --all --release && strip target/release/pog && mv target/release/pog target/release/pog_darwin
 
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/pg_darwin
+            target/release/pog_darwin
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
