@@ -1,6 +1,6 @@
 # Percentage of Growth Calculator
 
-Calculate the percentage of growth between to values.
+Calculate the percentage of growth between two values.
 
 # Installation
 
