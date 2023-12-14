@@ -1,5 +1,5 @@
-use clap::{arg, Command};
 use anyhow::Result;
+use clap::{arg, Command};
 
 fn cli() -> Command {
     Command::new("pog")
@@ -9,7 +9,7 @@ fn cli() -> Command {
         .arg(arg!(<FINAL_VALUE> "The final value").required(true))
 }
 
-fn main() -> Result<()>{
+fn main() -> Result<()> {
     let command = cli().get_matches();
 
     let initial_value = pog::parse_with_commas(command.get_one("INITIAL_VALUE").unwrap())?;
