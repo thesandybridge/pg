@@ -2,14 +2,16 @@
 
 Calculate the percentage of growth between two values.
 
-# Installation
+## Installation
 
-## Linux & WSL
+### Building using my script
+
+## Linux/macOS & WSL
 
 The downloaded file will be located in `~/.local/bin/`
 
 ```bash
-curl -s https://thesandybridge.github.io/scripts/install.sh | bash -s pg pg
+curl -s https://scripts.sandybridge.io/install.sh | bash -s pg pg
 ```
 
 # Basic Usage
